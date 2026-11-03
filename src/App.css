@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Tiny5+Duo:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary: rgb(29, 12, 75);
+  --dark: rgb(18, 6, 46);
+  --light: rgb(33, 58, 138);
+}
+
+body {
+  background-color: var(--primary);
+  color: white;
+
+  font-family: "Tiny5 Duo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "BLED" 0,
+    "JITT" 0,
+    "ROND" 0;
+  
+  padding: 0px;
+  margin: 0px;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+
+  flex-direction: row;
+  gap: 10px;
+
+  height: 100vh;
+  margin: 0px;
+
+  text-align: center;
+}
+
+.taskList {
+  background-color: var(--dark);
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  flex-direction: column;
+  padding: 50px;
+
+  height: 500px;
+}
+
+.task {
+  background-color: var(--light);
+  width: 200px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 10px;
+}
+
+input {
+  
+  background-color: var(--primary);
+  border: none;
+  padding: 10px;
+
+  width: 150px;
+
+  font-family: "Tiny5 Duo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "BLED" 0,
+    "JITT" 0,
+    "ROND" 0;
+
+    color: white;
+}
+
+button {
+  margin-top: 20px;
+
+  background-color: var(--light);
+  border: none;
+
+  padding: 10px;
+  width: 100px;
+
+  font-family: "Tiny5 Duo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "BLED" 0,
+    "JITT" 0,
+    "ROND" 0;
+
+    color: white;
+}
+
+.sector {
+  background-color: var(--dark);
+  width: 200px;
+  padding: 20px 10px 20px 10px;
+
+  margin-bottom: 30px;
+}
+
+.column {
+  margin-top: 100px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.check {
+  background-color: var(--primary);
+  width: 20px;
+  height: 20px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.pixel-font {
+  font-family: "Tiny5 Duo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "BLED" 0,
+    "JITT" 0,
+    "ROND" 0;
+}
