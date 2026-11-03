@@ -47,7 +47,40 @@ body {
   flex-direction: column;
   padding: 50px;
 
+  padding-right: 0px;
+
   height: 500px;
+}
+
+.delete {
+  position: absolute;
+  right: 20px;
+  bottom: -5px;
+  cursor: pointer;
+
+  opacity: 0;
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.taskHolder:hover .delete {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.taskHolder {
+  position: relative;
+
+  padding-right: 50px;
+}
+
+p {
+  padding: 5px;
+}
+
+.highlighted {
+  background-color: var(--light) !important;
 }
 
 .task {
