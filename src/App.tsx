@@ -42,6 +42,22 @@ function App() {
     setTasks(prevTasks => prevTasks.filter(task => task.id !== id));
   }
 
+  function removeAllDoneTasks() {
+    setTasks(prevTasks => prevTasks.filter(task => task.done != true))
+  }
+
+  function editTask(id: number, title: string) {
+    const newTask: TaskItem = {
+      id: tasks[id].id,
+      title: title,
+      done: tasks[id].done,
+    };
+
+    setTasks(prevTasks => prevTasks.map((task) =>
+      (task.id == id ? newTask : task)
+    ));
+  }
+
   const filteredTasks = tasks.filter(task => {
     if (searchText != "") return task.title.includes(searchText);
 
@@ -73,13 +89,14 @@ function App() {
       <div className='column' style={{minWidth: "320px"}}>
         <p>tasks left: {tasks.filter(task => !task.done).length}</p>
         <div className='taskList'>
-          <input type='text' value={searchText}  onChange={(e) => setSearchText(e.target.value)} style={{marginRight: "50px", marginBottom: "20px", width: "150px"}} placeholder="Task title..."/>
+          <input type='text' value={searchText}  onChange={(e) => setSearchText(e.target.value)} style={{marginRight: "50px", marginLeft: "50px", marginBottom: "20px", width: "150px"}} placeholder="Task title..."/>
           { sortedTasks.length > 0 ? 
             (sortedTasks.map((task) => (
-              <Task key={task.id} title={task.title}  id={task.id}  done={task.done}  onToggle={switchTask} onDelete={removeTask}/>
+              <Task key={task.id} title={task.title}  id={task.id}  done={task.done}  onToggle={switchTask} onDelete={removeTask} onEdit={editTask}/>
             ))) : 
-            (<p style={{marginRight: "50px"}}>no tasks found</p>) }
+            (<p style={{marginRight: "50px", marginLeft: "50px"}}>no tasks found</p>) }
         </div>
+        <button onClick={removeAllDoneTasks}>delete all done</button>
       </div>
 
       <div className='column'>

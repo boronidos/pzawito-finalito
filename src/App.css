@@ -47,7 +47,10 @@ body {
   flex-direction: column;
   padding: 50px;
 
+  width: 300px;
+
   padding-right: 0px;
+  padding-left: 0px;
 
   height: 500px;
 }
@@ -64,6 +67,23 @@ body {
   z-index: 1;
 }
 
+.edit {
+  position: absolute;
+  left: 20px;
+  bottom: -5px;
+  cursor: pointer;
+
+  opacity: 0;
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+.taskHolder:hover .edit {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .taskHolder:hover .delete {
   opacity: 1;
   pointer-events: auto;
@@ -73,6 +93,7 @@ body {
   position: relative;
 
   padding-right: 50px;
+  padding-left: 50px;
 }
 
 p {
@@ -136,6 +157,8 @@ button {
     "ROND" 0;
 
     color: white;
+
+    cursor: pointer;
 }
 
 .sector {
@@ -151,6 +174,8 @@ button {
 
   display: flex;
   flex-direction: column;
+
+  align-items: center;
 }
 
 .check {
